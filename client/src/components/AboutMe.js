@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 class AboutMeComponent extends Component{
     render(){
-        return
+        return 'Hello'
     }
 }
 export default AboutMeComponent

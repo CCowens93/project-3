@@ -6,9 +6,9 @@ class Navbar extends Component{
             <div className='navbar'>
                 <ul>
                     <li><a href="AboutMe">About me</a></li>
-                    <li>Portfolio</li>
-                    <li>Featured Work</li>
-                    <li>Contact</li>
+                    <li><a href="Portfolio">Portfolio</a></li>
+                    <li><a href="FeaturedWork">Featured Work</a></li>
+                    <li><a href="Contact">Contact</a></li>
                 </ul>
             </div>
         )
