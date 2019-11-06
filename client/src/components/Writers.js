@@ -1,6 +1,3 @@
-/* Step 1 import React, { Component } and axios
- *
- */
 import React, { Component } from 'react'
 import axios from 'axios'
 
@@ -8,12 +5,9 @@ import axios from 'axios'
  * Rename this class to reflect the component being created
  *
  */
-export default class HelloWorld extends Component {
+export default class Writers extends Component {
 
-    /* Step 3
-    * Create a state for the component to store view data
-    *
-    */
+    
     state = {
         message: ''
     }
@@ -26,7 +20,7 @@ export default class HelloWorld extends Component {
     *   -REMINDER remember `setState` it is an async function
     */
     componentDidMount() {
-        axios.get('/api/helloworld')
+        axios.get('/api/writers')
             .then((res) => {
                 this.setState({message: res.data})
             })

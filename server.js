@@ -1,22 +1,8 @@
-/* 
- * This is the template for a server.js file.  Follow the steps below and read
- * the comments for creating your own (or you can just copy this file).
- */
-
-/* Step 1
- *
- * Import needed packages
- *
- */
 const express = require('express')
+
 const app = express()
 
-/* Step 2
- * 
- * import routers from controllers/
- *
- */
-const { templateRouter } = require('./controllers/template.js')
+const { writersRouter } = require('./controllers/writers.js')
 
 
 /* Step 3
@@ -49,7 +35,7 @@ app.use(express.static(`${__dirname}/client/build`))
  * add router for the application to use. The first argument is a prefix to all
  * the paths defined in the router.
  */
-app.use('/api/helloworld', templateRouter)
+app.use('/api/writers', writersRouter)
 
 /* Step 5
  *
