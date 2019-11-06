@@ -1,6 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import './App.css';
+import HomeComponent from './components/Home.js';
+
 
 
 
@@ -14,10 +16,8 @@ class App extends React.Component {
       <Router>
         <Switch>
           <Route exact path="/">
+            <HomeComponent />
             </Route>
-          <Route exact path="/writers">
-              
-          </Route>
         </Switch>
       </Router>
     );
