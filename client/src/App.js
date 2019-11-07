@@ -34,23 +34,24 @@ class App extends React.Component {
             <BrandComponent />
             </Route>
         </Switch>
+        
         <Switch>
-          <Route exact path="/Profile/AboutMe">
+          <Route exact path="/AboutMe">
             <AboutMeComponent />
             </Route>
         </Switch>
         <Switch>
-          <Route exact path="/Profile/Portfolio">
+          <Route exact path="/Portfolio">
             <Portfolio />
           </Route>
         </Switch>
         <Switch>
-          <Route exact path="/Profile/FeaturedWork">
+          <Route exact path="/FeaturedWork">
             <FeaturedWorkComponent />
           </Route>
         </Switch>
         <Switch> 
-          <Route exact path="Profile/Contact">
+          <Route exact path="/Contact">
             <ContactComponent />
           </Route>
         </Switch>

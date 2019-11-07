@@ -6,6 +6,7 @@ class Navbar extends Component{
         return (
             <div className='navbar'>
                 <ul>
+                    <li><a href="/">Home</a></li>
                     <li><a href="AboutMe">About me</a></li>
                     <li><a href="Portfolio">Portfolio</a></li>
                     <li><a href="FeaturedWork">Featured Work</a></li>

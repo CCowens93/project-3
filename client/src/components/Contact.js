@@ -7,7 +7,7 @@ class ContactComponent extends Component{
         return (
             <div>
         <h1>What up</h1>
-        <Link to="./">Home Page</Link>
+        <Link to="./Profile">Back</Link>
         </div>
         )}
 }

@@ -7,7 +7,7 @@ class AboutMeComponent extends Component{
         return(
         <div>
             <h1>Hello</h1>
-            <Link to="/Profile">Home Page</Link>
+            <Link to="/Profile">Back</Link>
         </div>
         )}
 }

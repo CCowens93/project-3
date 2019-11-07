@@ -3,7 +3,8 @@ const mongoose = require('./connection.js')
 global.sampleModel = [];
 
 const ArtistSchema = new mongoose.Schema({
-    name: String
+    name: String,
+    title: String
 })
 
 const ArtistCollection = mongoose.model('Artists', ArtistSchema)

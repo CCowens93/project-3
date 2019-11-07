@@ -7,7 +7,7 @@ class FeaturedWorkComponent extends Component {
         return(
             <div>
                 <h1>Como Estas</h1>
-                <Link to="./">Home Page</Link>
+                <Link to="./Profile">Back</Link>
             </div>
             )}
 }

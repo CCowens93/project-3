@@ -27,7 +27,7 @@ class PortfolioComponent extends Component{
                     return(<p>{writing.name}</p>)
                 })}
 
-                <Link to="./">Home Page</Link>
+                <Link to="./Profile">Back</Link>
             </div>
             )}
     }
