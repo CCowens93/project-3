@@ -2,13 +2,26 @@ const mongoose = require('./connection.js')
 
 global.sampleModel = [];
 
-const WritersSchema = new mongoose.Schema({
- name: String
+const WritingSchema = new mongoose.Schema({
+ name: String,
+ style: {
+   type: String,
+   options: {
+     value: poetry,
+     value: shortStories,
+    }
+   }
+
 })
 
 
-const WritingCollection = mongoose.model('Writers', WritersSchema)
+const WritingCollection = mongoose.model('Writers', WritingSchema)
 
+
+
+const getWritingByArtistId = () => {
+  return WritingCollection.find({ artistId: artistId })
+}
 
 const getAllWritings = () => {
   return WritingCollection.find()
@@ -18,12 +31,12 @@ const getOneWriting = (writingId) => {
   return WritingCollection.findById(writingId)
 }
 
-const createWriting = (newWriting) => {
-  return WritingCollection.create.apply(newWriting)
+const updateWriting = (writingId, updatedWriting) => {
+  return WritingCollection.updateOne({_id: writingId}, updatedWriting)
 }
 
-const updateWriting = (writingId, updatedWriting) => {
-  return WritingCollection.updatedWriting({_id: writingId}, updatedWriting)
+const createWriting = (newWriting) => {
+  return WritingCollection.create.apply(newWriting)
 }
 
 const deleteWriting = (writingId) => {
@@ -37,5 +50,6 @@ module.exports = {
   getOneWriting,
   createWriting,
   updateWriting,
-  deleteWriting
+  deleteWriting,
+  getWritingByArtistId
 }

@@ -1,7 +1,13 @@
 import React, { Component }  from 'react';
+
+
  
 
-class HomeComponent extends Component {
+class ProfileComponent extends Component {
+
+    
+
+
     render(){
         return (
             <div className='home'>
@@ -12,4 +18,4 @@ class HomeComponent extends Component {
     }
 }
 
-export default HomeComponent
+export default ProfileComponent

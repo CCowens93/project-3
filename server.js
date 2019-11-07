@@ -2,7 +2,8 @@ const express = require('express')
 
 const app = express()
 
-const { writersRouter } = require('./controllers/writers.js')
+const { writingsRouter } = require('./controllers/writings.js')
+const { artistRouter } = require('.controllers/artist.js')
 
 
 /* Step 3
@@ -35,7 +36,8 @@ app.use(express.static(`${__dirname}/client/build`))
  * add router for the application to use. The first argument is a prefix to all
  * the paths defined in the router.
  */
-app.use('/api/writers', writersRouter)
+app.use('/api/writings', writingsRouter)
+app.use('/api/brand', artistRouter)
 
 /* Step 5
  *
