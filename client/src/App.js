@@ -18,7 +18,7 @@ class App extends React.Component {
   state = {
   }
   render() {
-    return (
+    return (<div className="App">
       <Router>
         <Switch>
           <Route exact path="/">
@@ -48,7 +48,7 @@ class App extends React.Component {
           </Route>
         </Switch>
       </Router>
-    );
+    </div>);
   }
 }
 

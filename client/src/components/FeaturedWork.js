@@ -1,9 +1,15 @@
 import React, { Component } from 'react'
 
+import { Link } from 'react-router-dom'
+
 class FeaturedWorkComponent extends Component {
     render(){
-        return 'Como Estas'
-    }
+        return(
+            <div>
+                <h1>Como Estas</h1>
+                <Link to="./">Home Page</Link>
+            </div>
+            )}
 }
 
 export default FeaturedWorkComponent
