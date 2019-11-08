@@ -10,7 +10,7 @@ import FeaturedWorkComponent from './components/FeaturedWork.js'
 import ContactComponent from './components/Contact.js'
 import HomePageComponent from './components/HomePage.js';
 import ProfileForm from './components/ProfileForm.js';
-import ProfileList from './components/ProfileList.js'
+// import ProfileList from './components/ProfileList.js'
 
 
 
@@ -31,7 +31,7 @@ class App extends React.Component {
           <Route exact path="/">
             <HomePageComponent />
             <ProfileForm />
-            <ProfileList />
+            {/* <ProfileList /> */}
           </Route>
           <Route exact path="/Profile">
             <ProfileComponent />
