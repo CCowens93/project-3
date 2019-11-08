@@ -8,8 +8,8 @@ import AboutMeComponent from './components/AboutMe.js'
 import Portfolio from './components/Portfolio.js'
 import FeaturedWorkComponent from './components/FeaturedWork.js'
 import ContactComponent from './components/Contact.js'
-import HomePageComponent from './components/HomePage';
-import ProfileForm from './components/ProfileForm';
+import HomePageComponent from './components/HomePage.js';
+import ProfileForm from './components/ProfileForm.js';
 
 
 
@@ -18,8 +18,10 @@ import ProfileForm from './components/ProfileForm';
 
 class App extends React.Component {
 
-  state = {
-  }
+
+
+
+
   render() {
     return (<div className="App">
       <Router>
@@ -27,11 +29,9 @@ class App extends React.Component {
           <Route exact path="/">
             <HomePageComponent />
             <ProfileForm />
-            <ProfileComponent />
           </Route>
           <Route exact path="/Profile">
             <ProfileComponent />
-            {/* <Navbar /> */}
             <BrandComponent />
             <AboutMeComponent />
             <Portfolio />

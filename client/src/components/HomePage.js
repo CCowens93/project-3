@@ -2,31 +2,11 @@ import React, { Component } from 'react'
 
 
 
-
-
 class HomePageComponent extends Component{
 
-    state = {
-        artistList: [
-            {
-                artistName: '',
-                style: ''
-            }
-        ]
-        
-    }
-
     
 
-    addNewArtistToProfileList = (newArtist) => {
-        const artistList = [...this.state.artistList]
-        artistList.push(newArtist)
-        this.setState({ artistList })
-    }
-
-    
-
-    render(){
+        render(){
         return(
         <div>
             <h1>List of Profiles</h1>

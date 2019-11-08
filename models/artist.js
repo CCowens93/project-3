@@ -20,7 +20,7 @@ const updateArtist = (artistId, updatedArtist) => {
 }
 
 const createArtist = (newArtist) => {
-    return ArtistCollection.create.apply(newArtist)
+    return ArtistCollection.create(newArtist)
 }
 
 const deleteArtist = (artistId) => {

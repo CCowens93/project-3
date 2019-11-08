@@ -1,17 +1,34 @@
 import React, { Component } from 'react'
-import Product from './Profile'
+import Profile from './Profile.js'
+
+import axios from 'axios'
 
 class ProfileList extends Component {
+
+    state = {
+        artistList: []
+    }
+
+    componentDidMount() {
+
+        axios.get('/api/artist')
+            .then((res) => {
+                this.setState({artistList: res.data})
+
+            })
+    }
+
     render() {
-        const profileList = this.props.profileList;
+        const profileList = this.state.artistList;
 
         console.log(profileList);
 
-        const profileComponents = profileList.map((profile, index) => {
-            return <Product
+        const profileComponents = artistList.map((profile, index) => {
+            return (<Profile
                 artistName={profile.artistName}
                 style={profile.style}
-                key={index} />;
+            key={index} />);
+
         });
 
         return (

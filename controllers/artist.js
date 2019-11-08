@@ -18,7 +18,7 @@ artistRouter.get('/', (req, res) => {
 
 
 //getOne
-artistRouter.get('/:artistid', (req, res) => {
+artistRouter.get('/:artistId', (req, res) => {
     artistApi.getOneArtist(req.params.artistId)
         .then((oneArtist) => {
             res.json(oneArtist)
@@ -32,7 +32,7 @@ artistRouter.get('/:artistid', (req, res) => {
 
 
 //update
-artistRouter.put('/:artistid', (req, res) => {
+artistRouter.put('/:artistId', (req, res) => {
     artistApi.updateArtist(req.params.artistId, req.body)
         .then(() => {
             res.json("updated")

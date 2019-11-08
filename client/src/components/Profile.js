@@ -8,8 +8,8 @@ class ProfileComponent extends Component {
         return (
             <div className='profile'>
                 <h1>Writer's Portfolio Page</h1>
-                <div>{this.props.artistName}</div>
-                <div>{this.props.style}</div>
+                <span>{this.props.artistName}</span>
+                <span>{this.props.style}</span>
                 
                 
             </div>

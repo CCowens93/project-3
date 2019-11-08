@@ -4,73 +4,70 @@ import axios from 'axios'
 
 
 
-class ProfileForm extends Component{
+class ProfileForm extends Component {
 
     state = {
-        newArtist: {
-            artistName: '',
-            style: ''
-        }
-        
-    
+        artistName: '',
+        style: ''
     }
+
+
+
     handleNewArtistProfile = (evt) => {
         const attributeName = evt.target.name;
         const attributeValue = evt.target.value;
 
 
-        const newArtist = { ...this.state.newArtist };
-        newArtist[attributeName] = attributeValue;
-
-        this.setState({newArtist})
+        const newState = { ...this.state };
+        newState[attributeName] = attributeValue;
+        this.setState(newState)
     }
     handleSubmit = (evt) => {
         evt.preventDefault()
-        axios.post('/api/writers', this.state.newArtist)
-        
+        axios.post('/api/artist', this.state)
+
     }
 
 
 
-    render(){
-        return(
+    render() {
+        return (
             <div>
                 <form onSubmit={this.handleSubmit}>
-                        <div>
-                            <input
-                                name="artistName"
-                                type="text"
-                                placeholder="name"
-                                value={this.state.newArtist.artistName}
-                                onChange={this.handleNewArtistProfile}/>
-                                
+                    <div>
+                        <input
+                            name="artistName"
+                            type="text"
+                            placeholder="name"
+                            value={this.state.artistName}
+                            onChange={this.handleNewArtistProfile}
+                        />
 
-                        </div>
 
-                        <div>
-                            <input 
-                                name="style"
-                                type="text"
-                                placeholder="style"
-                                valiue={this.state.newArtist.style}
-                                onChange={this.handleNewArtistProfile}
-                                />
-                        </div>
+                    </div>
 
-                        <div>
+                    <div>
+                        <input
+                            name="style"
+                            type="text"
+                            placeholder="style"
+                            valiue={this.state.style}
+                            onChange={this.handleNewArtistProfile}
+                        />
+                    </div>
+
+                    <div>
                         <input
                             type="submit"
                             value="Create New Profile"
-                            
-
-                            
                         />
-                        </div>
+                    </div>
 
                 </form>
-                
+
             </div>
-        )}
+        )
+    }
 }
 
 export default ProfileForm
