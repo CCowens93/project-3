@@ -3,12 +3,13 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import './App.css';
 import ProfileComponent from './components/Profile.js';
 import BrandComponent from './components/Brand.js'
-import Navbar from './components/Navbar.js'
+// import Navbar from './components/Navbar.js'
 import AboutMeComponent from './components/AboutMe.js'
 import Portfolio from './components/Portfolio.js'
 import FeaturedWorkComponent from './components/FeaturedWork.js'
 import ContactComponent from './components/Contact.js'
-import LandingPageComponent from './components/LandingPage';
+import HomePageComponent from './components/HomePage';
+import ProfileForm from './components/ProfileForm';
 
 
 
@@ -24,38 +25,21 @@ class App extends React.Component {
       <Router>
         <Switch>
           <Route exact path="/">
-            <LandingPageComponent />
+            <HomePageComponent />
+            <ProfileForm />
+            <ProfileComponent />
           </Route>
-        </Switch>
-        <Switch>
           <Route exact path="/Profile">
             <ProfileComponent />
-            <Navbar />
+            {/* <Navbar /> */}
             <BrandComponent />
-            </Route>
-        </Switch>
-        
-        <Switch>
-          <Route exact path="/AboutMe">
             <AboutMeComponent />
+            <Portfolio />
+            <FeaturedWorkComponent />
+            <ContactComponent />
             </Route>
         </Switch>
-        <Switch>
-          <Route exact path="/Portfolio">
-            <Portfolio />
-          </Route>
-        </Switch>
-        <Switch>
-          <Route exact path="/FeaturedWork">
-            <FeaturedWorkComponent />
-          </Route>
-        </Switch>
-        <Switch> 
-          <Route exact path="/Contact">
-            <ContactComponent />
-          </Route>
-        </Switch>
-      </Router>
+        </Router>
     </div>);
   }
 }

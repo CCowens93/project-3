@@ -32,7 +32,7 @@ writingsRouter.get('/byArtistId/:artistId', (req, res) => {
 
 
 //getOne
-writingsRouter.get('/:writingid', (req, res) => {
+writingsRouter.get('/:writingId', (req, res) => {
   writingsApi.getOneWriting(req.params.writingId)
       .then((oneWriting) => {
           res.json(oneWriting)
@@ -44,7 +44,7 @@ writingsRouter.get('/:writingid', (req, res) => {
 })
 
 //update
-writingsRouter.put('/:writingid', (req, res) => {
+writingsRouter.put('/:writingId', (req, res) => {
     writingsApi.updateWriting(req.params.writerId, req.body)
         .then(() => {
             res.json("updated")
@@ -70,7 +70,7 @@ writingsRouter.post('/', (req, res) => {
 
 
 //delete
-writingsRouter.delete('/:writingid', (req, res) => {
+writingsRouter.delete('/:writingId', (req, res) => {
   writingsApi.deleteWriting(req.params.id)
       .then(() => {
           res.json("deleted")

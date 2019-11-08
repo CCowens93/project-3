@@ -1,33 +1,33 @@
 import React, { Component } from 'react'
 
-import { Link } from 'react-router-dom'
 
-import axios from 'axios'
+
+// import axios from 'axios'
 
 class PortfolioComponent extends Component{
 
     state = {
-        allWriting: []
+        allWritings: []
     }
 
-    componentDidMount(){
-        axios.get('./api/writing')
-        .then((allWriting) => {
-            this.setState({allWriting: allWriting})
+    // componentDidMount(){
+    //     axios.get('/api/writings')
+    //     .then((allWritings) => {
+    //         this.setState({allWritings: allWritings})
     
-        })
-    }
+    //     })
+    // }
 
 
     render(){
         return(
             <div>
-                <h1>Hola</h1>
-                {this.state.allWriting.map((writing) => {
+                <h2>Portfolio</h2>
+                {this.state.allWritings.map((writing) => {
                     return(<p>{writing.name}</p>)
-                })}
+                 })} 
 
-                <Link to="./Profile">Back</Link>
+                
             </div>
             )}
     }

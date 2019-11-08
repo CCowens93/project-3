@@ -1,17 +1,10 @@
 const mongoose = require('./connection.js')
 
-global.sampleModel = [];
-
 const WritingSchema = new mongoose.Schema({
- name: String,
- style: {
-   type: String,
-   options: {
-     value: poetry,
-     value: shortStories,
-    }
-   }
-
+ title: String,
+ content: String,
+ themes: String,
+ dateWritten: Date
 })
 
 
@@ -36,7 +29,7 @@ const updateWriting = (writingId, updatedWriting) => {
 }
 
 const createWriting = (newWriting) => {
-  return WritingCollection.create.apply(newWriting)
+  return WritingCollection.create(newWriting)
 }
 
 const deleteWriting = (writingId) => {

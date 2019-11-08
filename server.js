@@ -3,7 +3,7 @@ const express = require('express')
 const app = express()
 
 const { writingsRouter } = require('./controllers/writings.js')
-const { artistRouter } = require('.controllers/artist.js')
+// const { artistRouter } = require('./controllers/artist.js')
 
 
 /* Step 3
@@ -37,7 +37,7 @@ app.use(express.static(`${__dirname}/client/build`))
  * the paths defined in the router.
  */
 app.use('/api/writings', writingsRouter)
-app.use('/api/brand', artistRouter)
+// app.use('/api/artists', artistsRouter)
 
 /* Step 5
  *

@@ -1,10 +1,8 @@
 const mongoose = require('./connection.js')
 
-global.sampleModel = [];
-
 const ArtistSchema = new mongoose.Schema({
-    name: String,
-    title: String
+    artistName: String,
+    style: String
 })
 
 const ArtistCollection = mongoose.model('Artists', ArtistSchema)
@@ -13,15 +11,15 @@ const getAllArtists = () => {
     return ArtistCollection.find()
 }
 
-const getOneArist = () => {
+const getOneArist = (artistId) => {
     return ArtistCollection.findById(artistId)
 }
 
-const updateArtist = () => {
+const updateArtist = (artistId, updatedArtist) => {
     return ArtistCollection.updateOne({_id: artistId}, updatedArtist)
 }
 
-const createArtist = () => {
+const createArtist = (newArtist) => {
     return ArtistCollection.create.apply(newArtist)
 }
 
