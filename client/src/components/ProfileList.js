@@ -23,11 +23,11 @@ class ProfileList extends Component {
 
         console.log(profileList);
 
-        const profileComponents = artistList.map((profile, index) => {
-            return (<Profile
+        const profileComponents = profileList.map((profile, index) => {
+            return <Profile
                 artistName={profile.artistName}
                 style={profile.style}
-            key={index} />);
+                key={index} />;
 
         });
 
@@ -37,6 +37,7 @@ class ProfileList extends Component {
             </div>
         );
     }
+    
 }
 
 export default ProfileList
