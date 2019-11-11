@@ -53,7 +53,7 @@ render (){
                         <div>
                             <input
                                 name="dateWritten"
-                                type="text"
+                                type="date"
                                 placeholder="date written"
                                 value={this.state.dateWritten}
                                 onChange={this.handlePortfolioWork}

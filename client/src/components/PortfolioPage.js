@@ -14,9 +14,12 @@ class PortfolioPage extends Component{
 
     render (){
         return(
+            <div>
+            <h2>Portfolio</h2>
 
-            
             <PortfolioList wrtitingList={this.props.title}/>
+
+            </div>
         )
     }
 }

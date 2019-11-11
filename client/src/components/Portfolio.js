@@ -1,13 +1,7 @@
 import React, { Component } from 'react'
 
-
 class PortfolioComponent extends Component {
 
-   
-
-    
-
-   
 render() {
         return (
             <div className="portfolio">

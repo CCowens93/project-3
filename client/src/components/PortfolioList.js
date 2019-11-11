@@ -12,6 +12,7 @@ class PortfolioList extends Component {
 
 
 componentDidMount(){
+    
     axios.get('/api/writings')
         .then((res) => {
             this.setState({ portfolioList: res.data })
@@ -19,6 +20,7 @@ componentDidMount(){
 }
 render() {
     const portfolioList = this.state.portfolioList;
+    
     console.log(portfolioList);
 
     const portfolioComponents = portfolioList.map((portfolio, index) => {

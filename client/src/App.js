@@ -1,8 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import './App.css';
-import ProfileComponent from './components/Profile.js';
-// import Navbar from './components/Navbar.js'
 import AboutMeComponent from './components/AboutMe.js'
 import Portfolio from './components/Portfolio.js'
 import FeaturedWorkComponent from './components/FeaturedWork.js'
@@ -13,16 +11,7 @@ import PortfolioForm from './components/PortfolioForm.js';
 import PortfolioPage from './components/PortfolioPage';
 
 
-
-
-
-
-
-
 class App extends React.Component {
-
-
-
 
 
   render() {
@@ -34,7 +23,6 @@ class App extends React.Component {
             <ProfileForm />
             </Route>
           <Route exact path="/profile">
-            <ProfileComponent />
             <AboutMeComponent />
             <Portfolio />
             <PortfolioPage />
