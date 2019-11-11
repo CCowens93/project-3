@@ -21,7 +21,7 @@ class PortfolioForm extends Component {
     }
     handleSubmit = (event) => {
         event.preventDefault()
-        axios.post('/api/profile', this.state)
+        axios.post('/api/writings', this.state)
     }
 
 
@@ -36,8 +36,8 @@ render (){
                                 placeholder="title"
                                 value={this.state.title}
                                 onChange={this.handlePortfolioWork}
-
-                            />
+                                />
+                                
                         </div>
 
                         <div>

@@ -21,6 +21,7 @@ class HomePageComponent extends Component{
             <h1>List of Profiles</h1>
             
             <Link to="./profile"> <ProfileList artistList={this.props.artistName}/>  </Link>
+            
             <h1>Create new Artists</h1>
             
 

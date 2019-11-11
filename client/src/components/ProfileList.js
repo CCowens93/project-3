@@ -26,7 +26,6 @@ class ProfileList extends Component {
         const profileComponents = profileList.map((profile, index) => {
             return (<Profile
                 artistName={profile.artistName}
-                // style={profile.style}
                 key={index} />);
 
         });

@@ -3,12 +3,11 @@ const mongoose = require('./connection.js')
 const WritingSchema = new mongoose.Schema({
  title: String,
  content: String,
- themes: String,
  dateWritten: Date
 })
 
 
-const WritingCollection = mongoose.model('Writers', WritingSchema)
+const WritingCollection = mongoose.model('Writings', WritingSchema)
 
 
 

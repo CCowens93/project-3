@@ -10,6 +10,7 @@ import ContactComponent from './components/Contact.js'
 import HomePageComponent from './components/HomePage.js';
 import ProfileForm from './components/ProfileForm.js';
 import PortfolioForm from './components/PortfolioForm.js';
+import PortfolioPage from './components/PortfolioPage';
 
 
 
@@ -36,6 +37,7 @@ class App extends React.Component {
             <ProfileComponent />
             <AboutMeComponent />
             <Portfolio />
+            <PortfolioPage />
             <PortfolioForm />
             <FeaturedWorkComponent />
             <ContactComponent />

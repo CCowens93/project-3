@@ -5,6 +5,7 @@ import axios from 'axios'
 import Portfolio from './Portfolio.js'
 
 class PortfolioList extends Component {
+    
     state = {
         portfolioList: []
     }
@@ -23,7 +24,9 @@ render() {
     const portfolioComponents = portfolioList.map((portfolio, index) => {
         return (<Portfolio
             title={portfolio.title}
-            key={index} />);
+            content={portfolio.content}
+            dateWritten={portfolio.date}
+            key={index} />);    
     });
 
     return (

@@ -6,22 +6,18 @@ import axios from 'axios'
 class ProfileComponent extends Component {
 
    
-
-
-
-
-    toggleEdit = () => {
+        toggleEdit = () => {
         const editProfile= !this.state.editProfile
         this.setState({editProfile})
-    }
+        }
 
-    changeArtist = () => {
+        changeArtist = () => {
         axios.put(`/api/artist/${this.props.match.params.profileId}`, this.state.changeProfile)
-    }
+        }
 
-    onDeleteClick = () => {
-        axios.delete(`/api/artist/${this.props.params.profileId}`)
-    }
+        onDeleteClick = () => {
+        axios.delete(`/api/artist/${this.props.params.artistId}`)
+        }
 
     
 
@@ -31,9 +27,12 @@ class ProfileComponent extends Component {
                 
                 <span>{this.props.artistName}</span>
                 <span>{this.props.style}</span>
-                
+                <span><button onClick={this.onDeleteClick}>Delete</button></span>
                 
             </div>
+            
+                
+           
         )
     }
 }
