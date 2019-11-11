@@ -4,6 +4,21 @@ const artistApi = require('../models/artist.js')
 
 const artistRouter = express.Router()
 
+
+
+
+//getOneProfileByArtistId
+artistRouter.get('/byArtistId/:artistId', (req, res) => {
+    artistApi.getOneArtist(req.params.artistId)
+    .then((oneArtist) => {
+        res.json(oneArtist)
+    })
+    .catch(error => {
+        console.log(error)
+        res.json(error)
+    })
+})
+
 //getAll
 artistRouter.get('/', (req, res) => {
     artistApi.getAllArtists()

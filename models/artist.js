@@ -7,11 +7,17 @@ const ArtistSchema = new mongoose.Schema({
 
 const ArtistCollection = mongoose.model('Artists', ArtistSchema)
 
+
+
+const getProfileByArtistId = () => {
+    return ArtistCollection.find({ artistId: artistId})
+}
+
 const getAllArtists = () => {
     return ArtistCollection.find()
 }
 
-const getOneArist = (artistId) => {
+const getOneArtist = (artistId) => {
     return ArtistCollection.findById(artistId)
 }
 
@@ -29,10 +35,11 @@ const deleteArtist = (artistId) => {
 
 module.exports = {
     getAllArtists,
-    getOneArist,
+    getOneArtist,
     updateArtist,
     createArtist,
-    deleteArtist
+    deleteArtist,
+    getProfileByArtistId
 }
 
 

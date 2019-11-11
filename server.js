@@ -2,7 +2,7 @@ const express = require('express')
 
 const app = express()
 
-// const { writingsRouter } = require('./controllers/writings.js')
+const { writingsRouter } = require('./controllers/writings.js')
 const { artistRouter } = require('./controllers/artist.js')
 
 
@@ -38,6 +38,7 @@ app.use(express.static(`${__dirname}/client/build`))
  */
 // app.use('/api/writings', writingsRouter)
 app.use('/api/artist', artistRouter)
+app.use('/api/writings', writingsRouter)
 
 /* Step 5
  *
