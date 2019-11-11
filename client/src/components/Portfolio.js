@@ -1,82 +1,27 @@
 import React, { Component } from 'react'
 
-import axios from 'axios'
 
 
 
-class PortfolioComponent extends Component{
 
-    handlePortfolioWork = (event) => {
-        const attributeName = event.target.name;
-        const attributeValue = event.target.value;
-    
-        const newState = { ...this.state};
-        newState[attributeName] = attributeValue;
-        this.setState(newState)
-    }
-    handleSubmit = (event) => {
-        event.preventDefault()
-        axios.post('/api/profile', this.state)
+class PortfolioComponent extends Component {
+
+    addNewWritingToPortfolioList = (newWriting) => {
+        const portfolioList = [...this.state.portfolioList]
+        portfolioList.push(newWriting)
+        this.setState({ portfolioList })
     }
 
-    state = {
-        portfolio: [
-            {
-                title: '',
-                content:'',
-                themes: '',
-                dateWritten: ''
-            }
-        ]
-    }
-
-    
-
-
-    render() {
+   
+render() {
         return (
-            <div>
+            <div className="portfolio">
                 <h2>Portfolio</h2>
-                
-
-
-
-            <div>
-                <form onSubmit = {this.handleSubmit}>
-                    <div>
-                <input 
-                    name="title"
-                    type="text"
-                    placeholder="title"
-                    value={this.state.title}
-                    onChange={this.handlePortfolioWork}
-                    
-                    />
-                    </div>
-
-                    <div>
-                        <input
-                        name="content"
-                        type="text"
-                        placeholder="content"
-                        value={this.state.content}
-                        onChange={this.handlePortfolioWork}
-                        />
-                    </div>
-
-                    <div>
-                        <input
-                            type="submit"
-                            value="create new writing"
-                            />
-                    </div>
-                 </form>
-            </div>
-
-            </div>
-            )
+                <span>{this.props.title}</span>
+                </div>
+               
+                )
+    
         }
-    }
-
-
+}
 export default PortfolioComponent

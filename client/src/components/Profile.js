@@ -5,18 +5,7 @@ import axios from 'axios'
  
 class ProfileComponent extends Component {
 
-    handlePortfolioWork = (event) => {
-        const attributeName = event.target.name;
-        const attributeValue = event.target.value;
-    
-        const newState = { ...this.state};
-        newState[attributeName] = attributeValue;
-        this.setState(newState)
-    }
-    handleSubmit = (event) => {
-        event.preventDefault()
-        axios.post('/api/profile', this.state)
-    }
+   
 
 
 
@@ -26,12 +15,12 @@ class ProfileComponent extends Component {
         this.setState({editProfile})
     }
 
-    changeProfile = () => {
-        axios.put(`/api/profile/${this.props.match.params.profileId}`, this.state.changeProfile)
+    changeArtist = () => {
+        axios.put(`/api/artist/${this.props.match.params.profileId}`, this.state.changeProfile)
     }
 
     onDeleteClick = () => {
-        axios.delete(`/api/profile/${this.props.params.profileId}`)
+        axios.delete(`/api/artist/${this.props.params.profileId}`)
     }
 
     

@@ -9,6 +9,7 @@ import FeaturedWorkComponent from './components/FeaturedWork.js'
 import ContactComponent from './components/Contact.js'
 import HomePageComponent from './components/HomePage.js';
 import ProfileForm from './components/ProfileForm.js';
+import PortfolioForm from './components/PortfolioForm.js';
 
 
 
@@ -35,6 +36,7 @@ class App extends React.Component {
             <ProfileComponent />
             <AboutMeComponent />
             <Portfolio />
+            <PortfolioForm />
             <FeaturedWorkComponent />
             <ContactComponent />
             </Route>
