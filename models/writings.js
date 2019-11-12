@@ -1,9 +1,11 @@
 const mongoose = require('./connection.js')
 
 const WritingSchema = new mongoose.Schema({
+ aboutMe: String,
  title: String,
  content: String,
- dateWritten: Date
+ dateWritten: Date,
+ contact: String
 })
 
 

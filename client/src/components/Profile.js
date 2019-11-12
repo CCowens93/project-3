@@ -5,19 +5,34 @@ import axios from 'axios'
  
 class ProfileComponent extends Component {
 
+
+    componentDidMount(){
+        this.refreshArtists()
+    }
+    
+    
+    
+        refreshArtists = () => {
+        return axios.get('/api/artist')
+            .then((response) => {
+                console.log(response.data)
+                this.setState({
+                    artistList: response.data
+                })
+            })
+    }
+
    
-        toggleEdit = () => {
-        const editProfile= !this.state.editProfile
-        this.setState({editProfile})
+       
+        onDeleteClick = (profileId) => {
+            const url = '/api/artist' + profileId
+            axios.delete(url)
+            .then(()=> {
+                this.refreshArtists()
+            })
         }
 
-        changeArtist = () => {
-        axios.put(`/api/artist/${this.props.match.params.profileId}`, this.state.changeProfile)
-        }
-
-        onDeleteClick = () => {
-        axios.delete(`/api/artist/${this.props.params.artistId}`)
-        }
+       
 
     
 
@@ -27,7 +42,7 @@ class ProfileComponent extends Component {
                 
                 <span>{this.props.artistName}</span>
                 <span>{this.props.style}</span>
-                <span><button onClick={this.onDeleteClick}>Delete</button></span>
+                {/* <span><button onClick={this.onDeleteClick}>Delete</button></span> */}
                 
             </div>
             

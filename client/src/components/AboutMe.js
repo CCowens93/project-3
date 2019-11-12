@@ -2,19 +2,20 @@ import React, { Component } from 'react'
 
 
 
-class AboutMeComponent extends Component{
+class AboutMeComponent extends Component {
 
 
-    render(){
-        return(
-        <div className="aboutMe">
+    render() {
+        return (
+            <div className="aboutMe">
 
-            <span>{this.props.aboutMe}</span>
+                <span>{this.props.aboutMe}</span>
 
-        </div>
+            </div>
 
 
 
-        )}
+        )
+    }
 }
 export default AboutMeComponent

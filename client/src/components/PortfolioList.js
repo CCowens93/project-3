@@ -27,7 +27,7 @@ render() {
         return (<Portfolio
             title={portfolio.title}
             content={portfolio.content}
-            dateWritten={portfolio.date}
+            dateWritten={portfolio.dateWritten}
             key={index} />);    
     });
 

@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 
-import axios from 'axios'
+class ProfileView extends Component {
 
-class PortfolioForm extends Component {
 
     state = {
-        
+        aboutMe: '',
         title: '',
-        content: '',
-        dateWritten: ''
+        content:'',
+        dateWritten:'',
+        contact:''
     }
 
     handlePortfolioWork = (event) => {
@@ -25,11 +25,14 @@ class PortfolioForm extends Component {
     }
 
 
-render (){
-    return(
-<div>
-    <h2>Portfolio Form</h2>
-                    <form onSubmit={this.handleSubmit}>
+
+
+
+    render(){
+        return(
+            <div className="profile-View">
+
+<form onSubmit={this.handleSubmit}>
                         <div>
                             <input
                                 name="title"
@@ -70,11 +73,8 @@ render (){
                         </div>
                     </form>
                 </div>
-
-            
         )
     }
 }
 
-
-export default PortfolioForm
+export default ProfileView
