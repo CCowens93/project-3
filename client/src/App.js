@@ -9,6 +9,11 @@ import HomePageComponent from './components/HomePage.js';
 import ProfileForm from './components/ProfileForm.js';
 import PortfolioForm from './components/PortfolioForm.js';
 import PortfolioPage from './components/PortfolioPage';
+import AboutMePage from './components/AboutMePage';
+import AboutMeForm from './components/AboutMeForm';
+import { Link } from 'react-router-dom'
+
+
 
 
 class App extends React.Component {
@@ -24,11 +29,14 @@ class App extends React.Component {
             </Route>
           <Route exact path="/profile">
             <AboutMeComponent />
+            <AboutMePage/>
+            <AboutMeForm />
             <Portfolio />
             <PortfolioPage />
             <PortfolioForm />
             <FeaturedWorkComponent />
             <ContactComponent />
+            <Link to='/'>Home</Link>
             </Route>
         </Switch>
         </Router>

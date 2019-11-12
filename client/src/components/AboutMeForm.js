@@ -1,8 +1,8 @@
-import React, { Componenet } from 'react'
+import React, { Component } from 'react'
 
 import axios from 'axios'
 
-class AboutMeForm extends Componenet{
+class AboutMeForm extends Component{
 
     state = {
         aboutMe: ''
@@ -18,7 +18,7 @@ class AboutMeForm extends Componenet{
     }
     handleSubmit = (event) => {
         event.preventDefault()
-        axios.post('/api/writings', this.state)
+        axios.post('/api/aboutMe', this.state)
     }
 
 render (){
