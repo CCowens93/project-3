@@ -2,10 +2,11 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import './App.css';
 import HomePageComponent from './components/HomePage.js';
-import ProfileForm from './components/ProfileForm.js';
 import { Link } from 'react-router-dom'
 // import ProfileView from './componenets/ProfileView.js'
-import PortfolioList from './components/PortfolioList';
+import ProfileView from './components/ProfileView';
+import AboutMeList from  './components/AboutMe.js'
+
 
 
 class App extends React.Component {
@@ -16,13 +17,11 @@ class App extends React.Component {
         <Switch>
           <Route exact path="/">
             <HomePageComponent />
-            <ProfileForm />
             </Route>
             {/* // this.props.match.params} */}
-          <Route exact path="/:profileId" >
-          {/* // component={}> */}
-            
-            <Link to='/'>Home</Link>
+          <Route exact path="/profile/:profileId" >
+           <AboutMeList />
+          <Link to='/'>Home</Link>
             </Route>
         </Switch>
         </Router>
