@@ -4,6 +4,7 @@ const app = express()
 
 const { portfolioRouter } = require('./controllers/portfolio.js')
 const { artistRouter } = require('./controllers/artist.js')
+const { meetUpRouter } = require('./controllers/meetUp.js')
 
 // const { contactRouter } = require('./controllers/contactRouter.js')
 
@@ -41,6 +42,7 @@ app.use(express.static(`${__dirname}/client/build`))
 // app.use('/api/writings', writingsRouter)
 app.use('/api/artist', artistRouter)
 app.use('/api/portfolio', portfolioRouter)
+app.use('/api/meetUp', meetUpRouter)
 
 
 /* Step 5

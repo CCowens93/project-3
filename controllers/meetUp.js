@@ -37,3 +37,7 @@ meetUpRouter.post('/', (req, res) => {
         res.json(error)
     })
 })
+
+module.exports = {
+    meetUpRouter
+}
