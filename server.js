@@ -2,9 +2,9 @@ const express = require('express')
 
 const app = express()
 
-const { writingsRouter } = require('./controllers/writings.js')
+const { portfolioRouter } = require('./controllers/portfolio.js')
 const { artistRouter } = require('./controllers/artist.js')
-const { aboutMeRouter } = require('./controllers/aboutMe.js')
+
 // const { contactRouter } = require('./controllers/contactRouter.js')
 
 
@@ -40,8 +40,8 @@ app.use(express.static(`${__dirname}/client/build`))
  */
 // app.use('/api/writings', writingsRouter)
 app.use('/api/artist', artistRouter)
-app.use('/api/writings', writingsRouter)
-app.use('/api/aboutMe', aboutMeRouter)
+app.use('/api/portfolio', portfolioRouter)
+
 
 /* Step 5
  *

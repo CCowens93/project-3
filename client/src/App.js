@@ -1,32 +1,22 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import home from './components/home.js'
+import portfolio from './components/portfolio.js'
 import './App.css';
-import HomePageComponent from './components/HomePage.js';
-import { Link } from 'react-router-dom'
-// import ProfileView from './componenets/ProfileView.js'
-import ProfileView from './components/ProfileView';
-import AboutMeList from  './components/AboutMe.js'
 
-
-
-class App extends React.Component {
-
-  render() {
-    return (<div className="App">
+function App() {
+  return (
+    <div className="App">
       <Router>
         <Switch>
-          <Route exact path="/">
-            <HomePageComponent />
-            </Route>
-            {/* // this.props.match.params} */}
-          <Route exact path="/profile/:profileId" >
-           <AboutMeList />
-          <Link to='/'>Home</Link>
-            </Route>
+          <Route exact path="/" component={home}/>
         </Switch>
-        </Router>
-    </div>);
-  }
+        <Switch>
+          <Route exact path="/portfolio/:portfolioId" component={portfolio}/>
+        </Switch>
+      </Router>
+    </div>
+  );
 }
 
-export default App
+export default App;

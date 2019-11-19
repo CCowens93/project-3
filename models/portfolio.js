@@ -8,7 +8,9 @@ const PortfolioSchema = new mongoose.Schema({
 
 const PortfolioCollection = mongoose.model('Portfolio', PortfolioSchema)
 
-
+const getPortfolioByArtistId = () => {
+    return PortfolioCollection.find({ artistId: artistId})
+}
 
 const getAllPortfolio = () => {
     return PortfolioCollection.find()
@@ -31,4 +33,5 @@ module.exports = {
     getOnePortfolio,
     createPortfolio,
     deletePortfolio,
+    getPortfolioByArtistId
 }

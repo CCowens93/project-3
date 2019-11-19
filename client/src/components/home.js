@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import ArtistList from './artistList.js'
+import {Link} from 'react-router-dom'
 
 
 
@@ -11,6 +11,7 @@ class HomePage extends Component {
     state = {
         artistName: '',
         style: '',
+        artistList: []
         
     }
 
@@ -26,16 +27,35 @@ class HomePage extends Component {
         event.preventDefault()
         axios.post('/api/artist', this.state)
     }
+    componentDidMount() {
+
+        axios.get('/api/artist')
+            .then((res) => {
+                this.setState({artistList: res.data})
+
+            })
+    }
 
    
     render() {
+        const artistList = this.state.artistList;
 
+        console.log(artistList);
+
+        const ArtistComponents = artistList.map((artist) => {
+            return (
+                    <Link to={`/portfolio/${artist._id}`}>
+                    <h3>{artist.artistName}</h3>
+                    <p>{artist.style}</p>
+                    </Link>);
+        });
 
         return (
             
-            <div>
+            <div className="Home">
                 <h1>Home Page</h1>
-                <ArtistList />
+                {ArtistComponents}
+                
                 
                 
   

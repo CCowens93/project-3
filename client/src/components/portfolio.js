@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 import axios from 'axios'
-import PortfolioList from './portfolioList.js'
+import { Link } from 'react-router-dom'
 
 
 class Portfolio extends Component{
@@ -10,8 +10,12 @@ class Portfolio extends Component{
         
         title: '',
         content: '',
-        dateWritten: ''
+        dateWritten: '',
+        portfolioList: []
     }
+
+    
+        
 
 
     handlePortfolioWork = (event) => {
@@ -26,15 +30,36 @@ class Portfolio extends Component{
         event.preventDefault()
         axios.post('/api/portfolio', this.state)
     }
+    componentDidMount() {
+
+        axios.get('/api/portfolio')
+            .then((res) => {
+                this.setState({portfolioList: res.data})
+
+            })
+        }
 
 
 
     render(){
+        const portfolioList = this.state.portfolioList;
+
+        console.log(portfolioList)
+
+        const PortfolioComponents = portfolioList.map((portfolio) => {
+        return(
+            <Link to={`/portfolio/${portfolio._id}`}>
+            <h2>{portfolio.title}</h2>
+            <p>{portfolio.content}</p>
+            <p>{portfolio.dateWritten}</p>
+            </Link>);
+        
+    });
         
         return(
             <div>
                 <h1>Portfolio</h1>
-                 
+                {PortfolioComponents}
                 
 
                 <form onSubmit={this.handleSubmit}>
