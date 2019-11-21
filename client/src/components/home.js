@@ -9,6 +9,7 @@ class HomePage extends Component {
     state = {
         artistName: '',
         style: '',
+        content:'',
         location:'',
         artistList: []
 
@@ -41,9 +42,10 @@ class HomePage extends Component {
 
         const ArtistComponents = artistList.map((artist) => {
             return (
-                <div>
+                <div className="single_artist">
                     <h2>{artist.artistName}</h2>
                     <p>{artist.style}</p>
+                    <p>{artist.content}</p>
                     <p>{artist.location}</p>
                 </div>);
         });
@@ -61,14 +63,20 @@ class HomePage extends Component {
         return (
 
             <div className="Home">
-                <h2>Amateur Artists</h2>
+
+                <h1>Writers Unite</h1>
+                
+        
+                <h2>This is a spot to add your own personal work to your app</h2>
+                <div  className="amateur_artists">
                 {ArtistComponents}
+                </div>
                 
                 
 
 
 
-
+            <div className="form">
                 <form onSubmit={this.handleSubmit}>
                     <div>
                         <input
@@ -90,6 +98,15 @@ class HomePage extends Component {
                             onChange={this.handlePortfolioWork}
                         />
                     </div>
+                    <div>
+                        <input
+                            name="content"
+                            text="text"
+                            placeholder="Content"
+                            value={this.state.content}
+                            onChange={this.handlePortfolioWork}
+                            />
+                    </div>
                     
                     <div>
                         <input
@@ -106,10 +123,11 @@ class HomePage extends Component {
                     <div>
                         <input
                             type="submit"
-                            value="Create Portfolio"
+                            value="Create Entry"
                         />
                     </div>
                 </form>
+                </div>
             </div>
         )
     }

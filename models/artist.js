@@ -3,6 +3,7 @@ const mongoose = require('./connection.js')
 const ArtistSchema = new mongoose.Schema({
     artistName: String,
     style: String,
+    content: String,
     location: String
 })
 

@@ -39,7 +39,7 @@ render () {
 
     const BookComponents = bookList.map((book_list) => {
         return (
-            <div>
+            <div className="single_book">
                 <h2>{book_list.genre}</h2>
                 <p>{book_list.author}</p>
                 <p>{book_list.title}</p>
@@ -47,13 +47,13 @@ render () {
     });
 
         return(
-            <div className = "book_list">
-                <h2>Published Authors</h2>
-                <div>
+            <div className="book_list">
+                <h2>List some of your favorite published works here!</h2>
+                <div className = "book_list_component">
                     {BookComponents}
                 </div>
 
-
+            <div className="form">
                 <form onSubmit={this.handleSubmit}>
                     <div>
                         <input
@@ -92,6 +92,7 @@ render () {
                             />
                     </div>
                 </form>
+                </div>
             </div>
         )
     }

@@ -37,7 +37,7 @@ class MeetUp extends Component {
 
         const MeetUpComponents = meetUpList.map((meetUp) => {
         return (
-            <div>
+            <div className="single_meet_up">
                 <h2>{meetUp.venue}</h2>
                 <p>{meetUp.location}</p>
                 <p>{meetUp.environment}</p>
@@ -48,15 +48,15 @@ class MeetUp extends Component {
         
         return(
             <div className = "Meet_Up">
-                <h2>Meet Up</h2>
-                <p>This is where you can list any places that are good for having book clubs, creative writing sessions, 
-                    or a place to study in peace! </p>
-                    <div>
+               
+                <h2>This is where you can list any places that are good for having book clubs and/or have creative writing sessions with others in your area!
+                     </h2>
+                    <div className="meet_up_component">
                        {MeetUpComponents}
                     </div>
                     
                 
-                
+               <div className="form">
                 <form onSubmit={this.handleSubmit}>
                     <div>
                         <input
@@ -95,6 +95,7 @@ class MeetUp extends Component {
                             />
                     </div>
                 </form>
+                </div>
             </div>
         )
     }
