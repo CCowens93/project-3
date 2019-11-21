@@ -5,8 +5,8 @@ This app was created to have a place for writers and/or advid readers to catalog
 
 #ERD https://imgur.com/RnWVcFX
 
-#[GitHub] https://github.com/CCowens93/project-3
+[GitHub] (https://github.com/CCowens93/project-3)
 
-#[Trello] https://trello.com/b/ZBC3rUfe/art-portfolio
+[Trello] (https://trello.com/b/ZBC3rUfe/art-portfolio)
 
-#[MyApp] https://hidden-lowlands-05898.herokuapp.com/
+[MyApp] (https://hidden-lowlands-05898.herokuapp.com/)
