@@ -3,8 +3,6 @@ import axios from 'axios'
 import { Link } from 'react-router-dom'
 
 
-
-
 class HomePage extends Component {
 
 
@@ -35,10 +33,6 @@ class HomePage extends Component {
 
             })
     }
-
-
-
-
     render() {
         const artistList = this.state.artistList;
 
@@ -57,6 +51,8 @@ class HomePage extends Component {
             <div className="Home">
                 <h1>Home Page</h1>
                 {ArtistComponents}
+                
+                
 
 
 

@@ -35,27 +35,27 @@ class MeetUp extends Component {
     render(){
         const meetUpList = this.state.meetUpList;
 
-        console.log(meetUpList);
-
         const MeetUpComponents = meetUpList.map((meetUp) => {
-            return (
-                <MeetUp 
-                title={meetUp.title}
-                content={meetUp.content}
-                dateWritten={meetUp.dateWritten}
-                />
-                    
-                
-            )
+        return (
+            <div>
+                <h2>{meetUp.venue}</h2>
+                <p>{meetUp.location}</p>
+                <p>{meetUp.environment}</p>
+            </div>);
         });
+        
 
-
+        
         return(
-            <div className = "Meet Up">
+            <div className = "Meet_Up">
                 <h2>Meet Up</h2>
                 <p>This is where you can list any places that are good for having book clubs, creative writing sessions, 
                     or a place to study in peace! </p>
-                {MeetUpComponents}
+                    <div>
+                       {MeetUpComponents}
+                    </div>
+                    
+                
                 
                 <form onSubmit={this.handleSubmit}>
                     <div>

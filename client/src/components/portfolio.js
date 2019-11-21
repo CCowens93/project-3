@@ -1,21 +1,23 @@
 import React, { Component } from 'react'
 
+
+
 import axios from 'axios'
-import { Link } from 'react-router-dom'
 
 
-class Portfolio extends Component{
+
+class Portfolio extends Component {
 
     state = {
-        
-        title: '',
-        content: '',
-        dateWritten: '',
+
+        artist: {
+            artistName: '',
+            style: ''
+        },
         portfolioList: []
+
     }
 
-    
-        
 
 
     handlePortfolioWork = (event) => {
@@ -31,82 +33,100 @@ class Portfolio extends Component{
         axios.post('/api/portfolio', this.state)
     }
     componentDidMount() {
+        console.log(this.props.match.params.artistId)
+
+        const currentArtistUrl = `/api/artist/${this.props.match.params.artistId}`
+
+
 
         axios.get('/api/portfolio')
             .then((res) => {
-                this.setState({portfolioList: res.data})
+                console.log(res.data)
+                this.setState({ portfolioList: res.data })
 
             })
-        }
+
+        axios.get(currentArtistUrl)
+            .then((res) => {
+                console.log(res.data)
+                this.setState({ artist: res.data })
+            })
+
+    }
 
 
 
-    render(){
-        const portfolioList = this.state.portfolioList;
+render() {
+    const portfolioList = this.state.portfolioList;
 
-        console.log(portfolioList)
+    console.log(portfolioList)
 
-        const PortfolioComponents = portfolioList.map((portfolio) => {
-        return(
-            <Link to={`/portfolio/${portfolio._id}`}>
-            <h2>{portfolio.title}</h2>
-            <p>{portfolio.content}</p>
-            <p>{portfolio.dateWritten}</p>
-            </Link>);
-        
-    });
-        
-        return(
+    const PortfolioComponents = portfolioList.map((portfolio) => {
+        return (
             <div>
-                <h1>Portfolio</h1>
-                {PortfolioComponents}
-                
+                <h2>{portfolio.title}</h2>
+                <p>{portfolio.content}</p>
+                <p>{portfolio.dateWritten}</p>
+            </div>);
 
-                <form onSubmit={this.handleSubmit}>
-                        <div>
-                            <input
-                                name="title"
-                                type="text"
-                                placeholder="title"
-                                value={this.state.title}
-                                onChange={this.handlePortfolioWork}
-                                />
-                                
-                        </div>
+    });
 
-                        <div>
-                            <input
-                                name="content"
-                                type="text"
-                                placeholder="content"
-                                value={this.state.content}
-                                onChange={this.handlePortfolioWork}
-                            />
-                        </div>
+    return (
+        <div>
+            <h1>Portfolio</h1>
+            {PortfolioComponents}
 
-                        <div>
-                            <input
-                                name="dateWritten"
-                                type="date"
-                                placeholder="date written"
-                                value={this.state.dateWritten}
-                                onChange={this.handlePortfolioWork}
-                            />
 
-                        </div>
 
-                        <div>
-                            <input
-                                type="submit"
-                                value="Create New Writing"
-                            />
-                        </div>
-                    </form>
+
+            <form onSubmit={this.handleSubmit}>
+                <div>
+                    <input
+                        name="title"
+                        type="text"
+                        placeholder="title"
+                        value={this.state.title}
+                        onChange={this.handlePortfolioWork}
+                    />
+
                 </div>
 
-            
-        )
-    }
+                <div>
+                    <input
+                        name="content"
+                        type="text"
+                        placeholder="content"
+                        value={this.state.content}
+                        onChange={this.handlePortfolioWork}
+                    />
+                </div>
+
+                <div>
+                    <input
+                        name="dateWritten"
+                        type="date"
+                        placeholder="date written"
+                        value={this.state.dateWritten}
+                        onChange={this.handlePortfolioWork}
+                    />
+
+                </div>
+
+                <div>
+                    <input
+                        type="submit"
+                        value="Create New Writing"
+                    />
+                </div>
+            </form>
+        </div>
+
+
+
+
+    )
+
+}
 }
 
 
