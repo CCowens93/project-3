@@ -1,9 +1,9 @@
 const mongoose = require('./connection.js')
 
 const PortfolioSchema = new mongoose.Schema({
-    title: String,
-    content: String,
-    dateWritten: Date
+    genre: String,
+    author: String,
+    title: String
 })
 
 const PortfolioCollection = mongoose.model('Portfolio', PortfolioSchema)

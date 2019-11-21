@@ -2,7 +2,8 @@ const mongoose = require('./connection.js')
 
 const ArtistSchema = new mongoose.Schema({
     artistName: String,
-    style: String
+    style: String,
+    location: String
 })
 
 const ArtistCollection = mongoose.model('Artists', ArtistSchema)

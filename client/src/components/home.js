@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import { Link } from 'react-router-dom'
+
 
 
 class HomePage extends Component {
@@ -9,6 +9,7 @@ class HomePage extends Component {
     state = {
         artistName: '',
         style: '',
+        location:'',
         artistList: []
 
     }
@@ -40,16 +41,27 @@ class HomePage extends Component {
 
         const ArtistComponents = artistList.map((artist) => {
             return (
-                <Link to={`/portfolio/${artist._id}`}>
-                    <h3>{artist.artistName}</h3>
+                <div>
+                    <h2>{artist.artistName}</h2>
                     <p>{artist.style}</p>
-                </Link>);
+                    <p>{artist.location}</p>
+                </div>);
         });
+
+
+
+
+
+                // <Link to={`/portfolio/${artist._id}`}>
+                //     <h3>{artist.artistName}</h3>
+                //     <p>{artist.style}</p>
+                // </Link>);
+        
 
         return (
 
             <div className="Home">
-                <h1>Home Page</h1>
+                <h2>Amateur Artists</h2>
                 {ArtistComponents}
                 
                 
@@ -77,6 +89,16 @@ class HomePage extends Component {
                             value={this.state.style}
                             onChange={this.handlePortfolioWork}
                         />
+                    </div>
+                    
+                    <div>
+                        <input
+                            name="location"
+                            type="text"
+                            placeholder="Location"
+                            value={this.state.location}
+                            onChange={this.handlePortfolioWork}
+                            />
                     </div>
 
 

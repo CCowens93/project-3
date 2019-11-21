@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import home from './components/home.js'
-import portfolio from './components/portfolio.js'
+import books from './components/books.js'
 import meetUp from './components/meetUp.js'
-import portfolioItem from './components/portfolioItem.js'
+
 import './App.css';
 
 function App() {
@@ -17,12 +17,9 @@ function App() {
           <Route exact path="/" component={meetUp}/>
         </Switch>
         <Switch>
-          <Route exact path="/portfolio/:artistId" component={portfolio}/>
+          <Route exact path="/" component={books}/>
         </Switch>
-        <Switch>
-          {/* <Route exact path="/portfolio/:artistId" component={portfolioItem}/> */}
-        </Switch>
-      </Router>
+       </Router>
     </div>
   );
 }

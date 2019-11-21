@@ -19,32 +19,31 @@ handleBookList = (event) => {
 
     const newState = { ...this.state};
     newState[attributeName] = attributeValue;
-    this.ListeningStateChangedEvent(newState)
+    this.setState(newState)
 }
 
 handleSubmit = (event) => {
     event.preventDefault ()
-    axios.post('/api/portfolio'. this.state)
+    axios.post('/api/portfolio', this.state)
 }
 
 componentDidMount() {
     axios.get('/api/portfolio')
     .then((res) => {
-        this.setState({book_list : res.data})
+        this.setState({ book_list : res.data})
     })
 }
 
 render () {
     const bookList = this.state.book_list;
 
-    const BookComponents = book_list.map((book_list) => {
+    const BookComponents = bookList.map((book_list) => {
         return (
             <div>
                 <h2>{book_list.genre}</h2>
                 <p>{book_list.author}</p>
                 <p>{book_list.title}</p>
-            </div>
-        );
+            </div>);
     });
 
         return(
@@ -93,7 +92,6 @@ render () {
                             />
                     </div>
                 </form>
-
             </div>
         )
     }

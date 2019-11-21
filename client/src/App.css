@@ -2,17 +2,31 @@
   text-align: center;
 }
 
-.Artist{
-  display: inline-block;
-  width: 320px;
-  padding: 10px;
-  border: 5px solid gray;
-  margin: 0;
+.header {
+  background-color: #F1F1F1;
+  text-align: center;
+  padding: 20px;
 }
 
 a {
   text-decoration: none;
 }
+
+.Home .Meet_Up .book_list{
+  display:flex;
+  
+}
+
+/* .Meet_Up{
+  float: left;
+  padding: 20px;
+}
+
+.book_list{
+  float: right;
+} */
+
+
 
 
 
